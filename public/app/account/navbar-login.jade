@@ -1,0 +1,40 @@
+ul.nav.navbar-nav.navbar-right
+	li
+		a(href="/") Home
+	li.nav-login
+		form.navbar-form.form-inline#signin-form
+			.form-group
+				input.form-control.input-sm(placeholder="Email", ng-model="username")
+			.form-group
+				input.form-control.input-sm(type="password", placeholder="Password", ng-model="password")
+			button.btn.btn-sm.btn-custom(ng-click="signin(username, password)", href="/auth/login") Sign In
+	li.nav-signup
+		a.nav-signup(data-toggle="modal", data-target="#signUpModal") Sign Up
+
+
+.modal.fade#signUpModal
+	.modal-dialog
+		form(action="/auth/signup", method="post")
+			.modal-content
+				.modal-header
+					button.close(type="button", data-dismiss="modal")
+						span(aria-hidden="true") &times;
+						span.sr-only Close
+					h4.modal-title Sign Up
+				.modal-body
+					.form-group
+						label(for="firstName") First name:
+						input.form-control(type="text", name="firstName")
+					.form-group
+						label(for="lastName") Last name:
+						input.form-control(type="text", name="lastName")
+					.form-group
+						label(for="username") Username:
+						input.form-control(type="text", name="username")
+					.form-group
+						label(for="password") Password:
+						input.form-control(type="password", name="password")
+				.modal-footer
+					button.btn.btn-default(data-dismiss="modal") Cancel
+					button.btn.btn-primary(type="submit") Sign Up
+

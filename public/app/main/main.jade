@@ -1,0 +1,15 @@
+.container
+	.row(ng-controller="MainCtrl")
+		.col-lg-4.col-sm-6.front(ng-repeat="thumbnail in templates")
+			img(ng-src="{{thumbnail.img}}", alt="{{thumbnail.alt}}")
+			.highlighted.back
+				.thumbnail-name
+					h2 {{thumbnail.name}}
+				.thumbnail-cta
+					a.btn.btn-success(href="{{thumbnail.url}}", ng-click="openView(thumbnail.sref)") Show Template
+
+	ul.menu
+		li
+			a(href="#/homeview")
+		li
+			a(href="#/view2")
