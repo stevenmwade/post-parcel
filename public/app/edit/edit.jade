@@ -16,6 +16,8 @@
 		.sidebar-body
 			.template-sections(ng-repeat="element in template[0].elements", data-tag="{{element.tag}}", draggable)
 				h1 {{element.name}}
+		.sidebar-footer
+			button.btn.btn-default(ng-click="sendEmail()") Get HTML
 	.col-sm-7.col-sm-offset-1
 		#drop-zone.text-center(droppable)
 			h1.editable Drop Here

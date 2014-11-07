@@ -1,7 +1,7 @@
 var passport = require('passport'),
 	passportConfig = require('../../server/config/passport'),
 	authenticationController = require('../../controllers/authenticationCtrl.js'),
-	templateCtrl = require('../../controllers/templateCtrl.js');
+	apiCtrl = require('../../controllers/apiCtrl.js');
 
 
 module.exports = function(app) {
@@ -27,7 +27,8 @@ module.exports = function(app) {
 	  });
 
 
-	app.get('/api/getElements', templateCtrl.getElements);
+	app.get('/api/getElements', apiCtrl.getElements);
+	app.post('/api/sendEmail', apiCtrl.sendEmail);
 
 
 	// Routes:
