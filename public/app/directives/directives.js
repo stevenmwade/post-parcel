@@ -15,18 +15,36 @@ myApp.directive('draggable', function(){
 	};
 });
 
+// myApp.directive('droppable', function($compile){
+// 	return {
+// 		restrict: 'A',
+// 		link: function($scope, element, attrs){
+// 			console.log(element);
+// 			element.droppable({
+// 				accept: ".template-sections",
+// 				hoverClass: "drop-hover",
+// 				drop: function(event, ui){
+// 					var el = $compile(ui.draggable.attr('data-tag'));
+// 					console.log(el);
+// 					$('#drop-zone').append(el({}));
+
+// 					setEditables();
+// 				}
+// 		});
+// 	}
+// });
+
 myApp.directive('droppable', function($compile){
 	return {
 		restrict: 'A',
 		link: function($scope, element, attrs){
-			console.log(element);
 			element.droppable({
-				accept: ".template-sections",
-				hoverClass: "drop-hover",
+				accept: '.template-sections',
+				hoverClass: 'drop-hover',
 				drop: function(event, ui){
 					var el = $compile(ui.draggable.attr('data-tag'));
-					console.log(el);
-					$('#drop-zone').after(el({}));
+					$('#drop-zone').append(el({}));
+					setEditables();
 				}
 			});
 		}

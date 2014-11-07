@@ -1,5 +1,6 @@
-.edit-container
-	aside.sidebar-nav.pull-left
+
+.edit-container.row
+	aside.sidebar-nav.col-sm-3
 		.sidebar-header
 			h1.sidebar-title {{template[0].name}}
 		.sidebar-divider
@@ -15,6 +16,6 @@
 		.sidebar-body
 			.template-sections(ng-repeat="element in template[0].elements", data-tag="{{element.tag}}", draggable)
 				h1 {{element.name}}
-	.container
+	.col-sm-7.col-sm-offset-1
 		#drop-zone.text-center(droppable)
-			h1 Drop Here
+			h1.editable Drop Here

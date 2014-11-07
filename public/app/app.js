@@ -3,7 +3,8 @@
 var myApp = angular.module('myApp', [
 	'ngResource',
 	'ngRoute',
-	'ngAnimate'
+	'ngAnimate',
+	'angular-medium-editor'
 ]);
 
 myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
