@@ -1,16 +1,8 @@
 var setEditables = function(){
 	setTimeout(function(){
-		var textElements = document.querySelectorAll('.editable-text'),
-			headerElements = document.querySelectorAll('.editable-header')
-			linkElements = document.querySelectorAll('.editable-link'),
-			textEditor = new MediumEditor(textElements, {
-				buttons: ['bold', 'italic', 'underline', 'quote', 'anchor']
-			}),
-			linkEditor = new MediumEditor(linkElements, {
-				buttons: ['bold', 'italic', 'underline', 'anchor']
-			}),
-			headerEditor = new MediumEditor(headerElements, {
-				buttons: ['italic', 'header1', 'header2']
+		var elements = document.querySelectorAll('.editable'),
+			editor = new MediumEditor(elements, {
+				buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'header1', 'header2']
 			});
 		
 		///////////////////////////
@@ -20,7 +12,31 @@ var setEditables = function(){
 	}, 100);
 };
 
-var height = $(window).height();
-console.log(height);
 
-$('.edit-container').css("height", height);
+$(document).ready(function() {
+	
+	$(document).on('mouseenter', '#hero-body', function(event) {
+		$('#hero-body > .section-btns').show();
+	});
+	$(document).on('mouseleave', '#hero-body', function(event) {
+		$('#hero-body > .section-btns').hide();
+	});
+	$(document).on('mouseenter', '#hero-header', function(event) {
+		$('#hero-header > .section-btns').show();
+	});
+	$(document).on('mouseleave', '#hero-header', function(event) {
+		$('#hero-header > .section-btns').hide();
+	});
+	$(document).on('mouseenter', '#hero-footer', function(event) {
+		$('#hero-footer > .section-btns').show();
+	});
+	$(document).on('mouseleave', '#hero-footer', function(event) {
+		$('#hero-footer > .section-btns').hide();
+	});
+
+	$(document).on('click', '.remove', function(event) {
+		$(this).closest('.hero').remove();
+	});
+
+
+});

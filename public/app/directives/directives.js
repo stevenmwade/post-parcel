@@ -38,6 +38,7 @@ myApp.directive('sortable', function(){
 		link: function($scope, element, attrs) {
 			setTimeout(function() {
 				element.sortable({
+					handle: '.sort-handler',
 					cursor: 'pointer',
 					opacity: 0.8,
 					axis: 'y',

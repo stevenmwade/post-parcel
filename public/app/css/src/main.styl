@@ -22,7 +22,7 @@
 .navbar
   margin-bottom 0
   
-.navbar-default 
+.navbar-custom 
   .navbar-nav
     & > li
       & > a
@@ -105,7 +105,7 @@
   border-bottom solid 1px #AAA
 
 .sidebar-footer
-  padding 10px
+  padding 20px 10px 10px 10px
 
 .section-selector
   text-align center
@@ -201,4 +201,41 @@
   a
     margin-left 10px
 
+.section-btns
+  display none
+
+.section-btns
+  & > div
+    height 30px
+    width 30px
+    position absolute
+    font-size 1.5em
+    z-index 9999
+    top 40%
+    background-color #000
+    // color #69c9a3
+    // color #a0f7d4
+    color #FFF
     
+.section-btns
+  & > div
+    &:hover
+      // color hsl(156, 47%, 50%)
+      // color #69c9a3
+      background-color #8ae2bf
+      color #FFF
+  
+.remove
+  left 637px
+  // margin-right 10px
+
+.hero
+  position relative
+
+.send-btn
+  width 175px
+
+.btn-send
+  background-color #69c9a3
+  color #FFF
+  border solid 1px #CCC

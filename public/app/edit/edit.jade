@@ -17,7 +17,7 @@
 			.template-sections.text-center(ng-repeat="element in template[0].elements", data-tag="{{element.tag}}", draggable)
 				h1 {{element.name}}
 		.sidebar-footer.text-center
-			button.btn.btn-default(ng-click="sendEmail()") Get HTML
+			button.btn.btn-default.send-btn(ng-click="sendEmail()") {{sendBtn}}
 	.col-sm-9.edit-holder
 		.row
 			#drop-zone.text-center.col-sm-8.col-sm-offset-2(droppable sortable)
