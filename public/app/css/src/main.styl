@@ -18,6 +18,9 @@
 
 .navbar-container
   max-width 1000px
+
+.navbar
+  margin-bottom 0
   
 .navbar-default 
   .navbar-nav
@@ -85,6 +88,25 @@
   -webkit-box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
   box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
 
+.sidebar-nav
+  height calc(100vh - 51px)
+  width 25%
+  background-color #FFF
+  border-right solid 1px #AAA
+  -moz-box-shadow 2px 0 10px rgba(0,0,0,0.10)
+  -webkit-box-shadow 2px 0 10px rgba(0,0,0,0.10)
+  box-shadow 2px 0 10px rgba(0,0,0,0.10)
+
+.sidebar-header
+  border-bottom solid 1px #AAA
+  
+.sidebar-body
+  height 70%
+  border-bottom solid 1px #AAA
+
+.sidebar-footer
+  padding 10px
+
 .section-selector
   text-align center
   img
@@ -138,11 +160,23 @@
 .template-items
   display none
 
+.edit-container
+  background-color #F9F9F9
+  // height calc(100vh - 51px)
+  // height 100%
+
 #drop-zone
-  min-width 500px
+  min-width 600px
   min-height 300px
-  background-color #ccc
-  padding 20px
+  background-color #FFF
+  padding-top 15px
+  position relative
+  margin-top 5%
+  margin-bottom 5%
+  
+.edit-holder
+  height calc(100vh - 51px)
+  overflow scroll
 
 .drop-hover
   border solid 1px #9C9C9C

@@ -7,8 +7,7 @@ myApp.directive('draggable', function(){
 				helper: 'clone',
 				appendTo: '#drop-zone',
 				start: function(event, ui) {
-					console.log(event);
-					console.log(ui);
+					
 				}
 			});
 		}
@@ -24,10 +23,28 @@ myApp.directive('droppable', function($compile){
 				hoverClass: 'drop-hover',
 				drop: function(event, ui){
 					var el = $compile(ui.draggable.attr('data-tag'));
+					$('.drop-placeholder').remove();
 					$('#drop-zone').append(el({}));
 					setEditables();
 				}
 			});
+		}
+	}
+});
+
+myApp.directive('sortable', function(){
+	return {
+		restrict: 'A',
+		link: function($scope, element, attrs) {
+			setTimeout(function() {
+				element.sortable({
+					cursor: 'pointer',
+					opacity: 0.8,
+					axis: 'y',
+					tolerance: 'pointer',
+					revert: 'true'
+				});	
+			}, 200);
 		}
 	}
 });

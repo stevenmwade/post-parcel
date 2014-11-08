@@ -17,7 +17,10 @@ var setEditables = function(){
 		//  FIX CLICK ME BUTTON  //
 		///////////////////////////
 
-
 	}, 100);
 };
 
+var height = $(window).height();
+console.log(height);
+
+$('.edit-container').css("height", height);
