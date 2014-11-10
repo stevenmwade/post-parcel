@@ -1,7 +1,7 @@
 var Template = require('../models/templates.js');
 var sendgrid = require('sendgrid')('swade', 'wade2013');
 
-var email      = new sendgrid.Email();
+var email = new sendgrid.Email();
 
 
 
@@ -14,22 +14,31 @@ var apiCtrl = {
 	},
 
 	sendEmail: function(req, res){
-		var html = req.body.data;
-		console.log('REQ BODY, HTML STUFF: ', req.body.data);
+		var html = req.body.html,
+			from = req.body.from,
+			to = req.body.to,
+			subject = req.body.subject;
+
+		console.log('REQ BODY, HTML STUFF: ', req.body);
 		// Set email data
-		email.addTo('audentia.veritas@gmail.com');
-		email.addTo('stevenmwade@gmail.com');
-		email.setFrom('stevenmwade@gmail.com');
-		email.setSubject('Test');
+		email.to = to;
+		email.setFrom(from);
+		email.setSubject(subject);
 		email.setHtml(html);
+
+		console.log('Filled email: ', email);
 		// Send e-mail
 		sendgrid.send(email, function(err, json) {
 		  if (err) {
-		  	return console.error(err);
+		  	console.error(err)
+		  	return res.send(err);
+
 		  }
 		  console.log(json);
+		  res.send(json);
 		});
 	}
+	
 };
 
 module.exports = apiCtrl;

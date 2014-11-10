@@ -1,3 +1,6 @@
+body
+  font-family 'Lato', 'HelveticaNeue-Light', sans-serif
+
 .menu
   list-style none
   border-bottom 0.1em solid black
@@ -21,21 +24,31 @@
 
 .navbar
   margin-bottom 0
+
+.navbar
+  &.navbar-custom
+    background-color #21865A
+    border-bottom none
+    -moz-box-shadow 0 0 5px rgba(0,0,0,0.40)
+    -webkit-box-shadow 0 0 5px rgba(0,0,0,0.40)
+    box-shadow 0 0 5px rgba(0,0,0,0.40)
   
 .navbar-custom 
   .navbar-nav
     & > li
       & > a
-        &.nav-signup
-          color #69c9a3
+          color #FFF
      
-.navbar-default 
+.navbar-custom 
   .navbar-nav
     & > li
       & > a
-        &.nav-signup
-          &:hover
-            color hsl(156, 47%, 50%)
+        &:hover
+          color #CCC
+
+.navbar-brand
+  color #FFF
+  font-size 2em
 
 .container
   position relative
@@ -46,66 +59,28 @@
     position relative
     top 85px
 
-.navbar-custom
-  background-color #FFF
-  border-bottom solid 1px #DDD
-  -moz-box-shadow 0 0 5px rgba(0,0,0,0.40)
-  -webkit-box-shadow 0 0 5px rgba(0,0,0,0.40)
-  box-shadow 0 0 5px rgba(0,0,0,0.40)
-
-.navbar-title
-  float none
-  display inline-block
-  h2
-    color #9A9EA1
-    margin 0
-
-.sidebar
-  position fixed
-  top 85px
-  z-index 100
-  display block
-  overflow-x hidden
-  overflow-y auto
-  background-color #EFEFEF
-  border-right solid 1px #CCC
-  height 100%
-  -moz-box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-  -webkit-box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-  box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-
-.sidebar-alt
-  background-color #9A9EA1
-  position fixed
-  top 85px
-  z-index 100
-  display block
-  overflow-x hidden
-  overflow-y auto
-  border-right solid 1px #CCC
-  height 100%
-  -moz-box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-  -webkit-box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-  box-shadow inset 2px 0 10px rgba(0,0,0,0.10)
-
 .sidebar-nav
   height calc(100vh - 51px)
-  width 25%
+  width 22%
   background-color #FFF
-  border-right solid 1px #AAA
   -moz-box-shadow 2px 0 10px rgba(0,0,0,0.10)
   -webkit-box-shadow 2px 0 10px rgba(0,0,0,0.10)
   box-shadow 2px 0 10px rgba(0,0,0,0.10)
 
-.sidebar-header
-  border-bottom solid 1px #AAA
+.sidebar-style
+  border-bottom solid 3px #21865A
+  margin-left 60px
+  margin-right 45px
+  
+
+.sidebar-title
+  text-transform uppercase
   
 .sidebar-body
   height 70%
-  border-bottom solid 1px #AAA
 
 .sidebar-footer
-  padding 20px 10px 10px 10px
+  padding 30px 10px 10px 25px
 
 .section-selector
   text-align center
@@ -234,8 +209,15 @@
 
 .send-btn
   width 175px
+  background-color #FFF
+  color #000
+  font-weight 500
+  border solid 1px #000
 
-.btn-send
-  background-color #69c9a3
-  color #FFF
-  border solid 1px #CCC
+.send-btn
+  &:hover
+    background-color #21865A
+    color #FFF
+    border solid 1px #21865A
+  
+
