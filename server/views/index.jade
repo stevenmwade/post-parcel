@@ -3,10 +3,16 @@ extends ../includes/layout
 block content
 	header
 		nav.navbar.navbar-custom.navbar-static-top
-			.container
+			.container-fluid
 				.navbar-header
-					a.navbar-brand(href="/") The Newsletter
-				.navbar-collapse.collapse(ng-include="'/partials/account/navbar-login'")
+					a.navbar-brand(href="/")
+						img.logo-sm(src="/app/img/post-parcel-logo-sm.png", alt="Post & Parcel")
+				.navbar-collapse.collapse
+					ul.nav.navbar-nav.navbar-left
+						li
+							a.home-cta(href="/", style="display: none") Go Home
+
+				//- .navbar-collapse.collapse(ng-include="'/partials/account/navbar-login'")
 
 	main.content
 		div(ng-view)

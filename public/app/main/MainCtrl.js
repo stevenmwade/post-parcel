@@ -8,9 +8,10 @@ myApp.controller('MainCtrl', function($scope, Templates){
 	});
 	// $scope.templates = Templates;
 	console.log('MainCtrl: ', $scope.templates);
-	$scope.openView = function(sref){
-		// $state.go(sref);
-	}
+
+	$scope.moveTop = function() {
+		$('html, body').animate({scrollTop: '640px'});
+	};
 });
 
 

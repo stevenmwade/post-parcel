@@ -17,20 +17,20 @@ Template.find({}).exec(function(err, collection){
 		Template.create({
 				name: 'Hero',
 				url: '/templates/hero',
-				img: 'http://placehold.it/360x500',
+				img: '/app/templates/hero/img/thumbnail.png',
 				thumbnail: '',
 				elements: [{
 						name: 'header',
 						tag: '<hero-header>',
-						thumbnail: ''
+						thumbnail: '/app/templates/hero/img/header.png'
 					}, {
 						name: 'body',
 						tag: '<hero-body>',
-						thumbnail: ''
+						thumbnail: '/app/templates/hero/img/body.png'
 					}, {
 						name: 'footer',
 						tag: '<hero-footer>',
-						thumbnail: ''
+						thumbnail: '/app/templates/hero/img/footer.png'
 					}]
 		});
 		Template.create({
@@ -53,21 +53,78 @@ Template.find({}).exec(function(err, collection){
 					}]
 		});
 		Template.create({
-				name: 'Lean',
-				url: '/templates/lean',
+				name: 'Bistander',
+				url: '/templates/bistander',
 				img: 'http://placehold.it/360x500',
 				thumbnail: '',
 				elements: [{
 						name: 'header',
-						tag: '<lean-header>',
+						tag: '<bistander-header>',
 						thumbnail: ''
 					}, {
 						name: 'body',
-						tag: '<lean-body>',
+						tag: '<bistander-body>',
 						thumbnail: ''
 					}, {
 						name: 'footer',
-						tag: '<lean-footer>',
+						tag: '<bistander-footer>',
+						thumbnail: ''
+					}]
+		});
+		Template.create({
+				name: 'Victim',
+				url: '/templates/victim',
+				img: 'http://placehold.it/360x500',
+				thumbnail: '',
+				elements: [{
+						name: 'header',
+						tag: '<victim-header>',
+						thumbnail: ''
+					}, {
+						name: 'body',
+						tag: '<victim-body>',
+						thumbnail: ''
+					}, {
+						name: 'footer',
+						tag: '<victim-footer>',
+						thumbnail: ''
+					}]
+		});
+		Template.create({
+				name: 'Volunteer',
+				url: '/templates/volunteer',
+				img: 'http://placehold.it/360x500',
+				thumbnail: '',
+				elements: [{
+						name: 'header',
+						tag: '<volunteer-header>',
+						thumbnail: ''
+					}, {
+						name: 'body',
+						tag: '<volunteer-body>',
+						thumbnail: ''
+					}, {
+						name: 'footer',
+						tag: '<volunteer-footer>',
+						thumbnail: ''
+					}]
+		});
+		Template.create({
+				name: 'Traitor',
+				url: '/templates/traitor',
+				img: 'http://placehold.it/360x500',
+				thumbnail: '',
+				elements: [{
+						name: 'header',
+						tag: '<traitor-header>',
+						thumbnail: ''
+					}, {
+						name: 'body',
+						tag: '<traitor-body>',
+						thumbnail: ''
+					}, {
+						name: 'footer',
+						tag: '<traitor-footer>',
 						thumbnail: ''
 					}]
 		});

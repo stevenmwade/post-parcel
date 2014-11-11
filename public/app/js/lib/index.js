@@ -38,5 +38,14 @@ $(document).ready(function() {
 		$(this).closest('.hero').remove();
 	});
 
+	$(document).on('mouseenter', '.navbar-brand', function(event) {
+		$('.home-cta').toggle("fade");
+	});
+
+	$(document).on('mouseleave', '.navbar-brand', function(event) {
+		setTimeout(function(){
+			$('.home-cta').toggle("fade");
+		}, 2000);
+	});
 
 });

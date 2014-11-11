@@ -5,9 +5,12 @@ myApp.directive('draggable', function(){
 			element.draggable({
 				revert:'invalid',
 				helper: 'clone',
-				appendTo: '#drop-zone',
+				appendTo: '.edit-container',
 				start: function(event, ui) {
-					
+					ui.helper.animate({
+						width: 236.5,
+						height: 233.75
+					});
 				}
 			});
 		}
@@ -19,7 +22,7 @@ myApp.directive('droppable', function($compile){
 		restrict: 'A',
 		link: function($scope, element, attrs){
 			element.droppable({
-				accept: '.template-sections',
+				accept: '.template-items',
 				hoverClass: 'drop-hover',
 				drop: function(event, ui){
 					var el = $compile(ui.draggable.attr('data-tag'));
@@ -48,6 +51,26 @@ myApp.directive('sortable', function(){
 			}, 200);
 		}
 	}
+});
+
+myApp.directive('editLink', function(){
+	return {
+		restrict: 'A',
+		link: function($scope, element, attr) {
+			$(document).on('click', '.edit-img', function(event) {
+				$('#imgModal').modal('show');
+				var that = $(this)
+				console.log('This image: ', $(this));
+				$(document).on('click', element, function(event) {
+					event.preventDefault();
+					var link = $('input[name=link]').val();
+					console.log('Image link: ', link);
+					console.log('Image source: ', that.attr('src'));
+					that.attr('src', link);
+				});
+			});
+		}
+	};
 });
 
 myApp.directive('heroHeader', function(){

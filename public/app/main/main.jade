@@ -1,17 +1,42 @@
+.main-head
+	.container
+		.row
+			.col-sm-12
+				h1.brand.text-center 
+					a(href="/")
+						img.logo(src="/app/img/post-parcel-logo.png", alt="Post & Parcel")
+		.row.description
+			.col-sm-10.col-sm-offset-1
+				p.hook <em>With no account neccessary, Post &amp; Parcel allows you to creat HTML newsletters by letting you pick bits and pieces of already made templates while choosing your own content. You may send emails to your entire mailing by using SendGrid's marketing email system with no cost to you.</em>
+		.row.template-cta
+			.col-sm-4.col-sm-offset-4
+				button.btn.send-btn-alt(ng-click="moveTop()") Pick Your Template
+
 .container
 	.row(ng-controller="MainCtrl")
-		.col-lg-4.col-sm-6.front(ng-repeat="thumbnail in templates")
-			img(ng-src="{{thumbnail.img}}", alt="{{thumbnail.alt}}")
+		.col-lg-4.col-sm-6.front.text-center(ng-repeat="thumbnail in templates")
+			img.template-thumbnail(ng-src="{{thumbnail.img}}", alt="{{thumbnail.alt}}")
 			.highlighted.back
 				.thumbnail-name
 					h2 {{thumbnail.name}}
 				.thumbnail-cta
-					a.btn.btn-success(href="{{thumbnail.url}}", ng-click="openView(thumbnail.sref)") Show Template
+					a.btn.send-btn-alt(href="{{thumbnail.url}}", ng-click="openView(thumbnail.sref)") Use Template
 
-	ul.menu
-		li
-			a(href="#/homeview")
-		li
-			a(href="#/view2")
-footer.container.text-center
-	p &copy; 2014 Steven M Wade Photography, Ltd.
+footer.footer
+	.footer-container.container-fluid
+		.row(style="padding-top: 30px")
+			.col-sm-2.col-sm-offset-3
+				ul(style="list-style: none")
+					li Super
+					li Awesome
+					li Dooper
+					li Skates
+			.col-sm-2
+				p 123 Main St
+				| Denver, CO
+			.col-sm-2
+				p
+					a(href="/") Jobs
+		.row
+			.col-sm-12
+				p.text-center &copy; 2014 Steven M Wade Photography, Ltd.
