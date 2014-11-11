@@ -1,5 +1,12 @@
 var Template = require('../models/templates.js');
-var sendgrid = require('sendgrid')('swade', 'wade2013');
+
+if(process.env.SENDGRID_USERNAME) {
+	var sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+} else {
+	var private = require('../../private.js');
+	var sendgrid = require('sendgrid')(private.SENDGRID_USERNAME, private.SENDGRID_PASSWORD);	
+}
+
 
 var email = new sendgrid.Email();
 

@@ -12,6 +12,6 @@ module.exports = {
 	production: {
 		rootPath: rootPath,
 		port: process.env.PORT || 80,
-		db: 'mongodb://swade:refactoru@dogen.mongohq.com:10032/newsletter'
+		db: process.env.MONGO_URL
 	}
 }
