@@ -57,17 +57,30 @@ myApp.directive('editLink', function(){
 	return {
 		restrict: 'A',
 		link: function($scope, element, attr) {
+			var clearField = function(){
+				setTimeout(function(){
+					$('input[name=link]').val('');
+				}, 100);
+			};
+
 			$(document).on('click', '.edit-img', function(event) {
 				$('#imgModal').modal('show');
 				var that = $(this)
 				console.log('This image: ', $(this));
-				$(document).on('click', element, function(event) {
+				$(document).one('click', '.change-img', function(event) {
 					event.preventDefault();
 					var link = $('input[name=link]').val();
 					console.log('Image link: ', link);
 					console.log('Image source: ', that.attr('src'));
 					that.attr('src', link);
+
+					clearField();
+
 				});
+			});
+			$(document).on('click', '.cancel-change-img', function(event) {
+				$(document).off('click', '.change-img');
+				clearField();
 			});
 		}
 	};

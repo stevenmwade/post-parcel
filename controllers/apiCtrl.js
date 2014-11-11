@@ -1,4 +1,5 @@
 var Template = require('../models/templates.js');
+
 var sendgrid = require('sendgrid')('swade', 'wade2013');
 
 var email = new sendgrid.Email();
@@ -19,7 +20,7 @@ var apiCtrl = {
 			to = req.body.to,
 			subject = req.body.subject;
 
-		console.log('REQ BODY, HTML STUFF: ', req.body);
+		console.log('Process Env: ', sendgridUsername);
 		// Set email data
 		email.to = to;
 		email.setFrom(from);

@@ -22,21 +22,4 @@
 				.thumbnail-cta
 					a.btn.send-btn-alt(href="{{thumbnail.url}}", ng-click="openView(thumbnail.sref)") Use Template
 
-footer.footer
-	.footer-container.container-fluid
-		.row(style="padding-top: 30px")
-			.col-sm-2.col-sm-offset-3
-				ul(style="list-style: none")
-					li Super
-					li Awesome
-					li Dooper
-					li Skates
-			.col-sm-2
-				p 123 Main St
-				| Denver, CO
-			.col-sm-2
-				p
-					a(href="/") Jobs
-		.row
-			.col-sm-12
-				p.text-center &copy; 2014 Steven M Wade Photography, Ltd.
+footer.footer(ng-include="'/partials/main/footer'")

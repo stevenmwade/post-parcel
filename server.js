@@ -3,7 +3,6 @@ var express = require('express'),
 	passport = require('passport'),
 	LocalStrategy = require('passport-local').Strategy;
 
-
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
