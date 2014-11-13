@@ -1,3 +1,4 @@
+//- Main page navigation and hero
 .main-head
 	.container
 		.row
@@ -12,6 +13,7 @@
 			.col-sm-4.col-sm-offset-4
 				button.btn.send-btn-alt(ng-click="moveTop()") Pick Your Template
 
+//- Template views
 .container
 	.row(ng-controller="MainCtrl")
 		.col-lg-4.col-sm-6.front.text-center(ng-repeat="thumbnail in templates")
@@ -22,4 +24,5 @@
 				.thumbnail-cta
 					a.btn.send-btn-alt(href="{{thumbnail.url}}", ng-click="openView(thumbnail.sref)") Use Template
 
+//- Footer for main page only
 footer.footer(ng-include="'/partials/main/footer'")

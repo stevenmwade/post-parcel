@@ -26,8 +26,9 @@ module.exports = function(app) {
 	    res.redirect('/');
 	  });
 
-
+	// Rotues for getting each part of the templates
 	app.get('/api/getElements', apiCtrl.getElements);
+	// Route for sending the content through SendGrid
 	app.post('/api/sendEmail', apiCtrl.sendEmail);
 
 

@@ -1,13 +1,13 @@
-
 .edit-container.row(droppable)
+	//- Edit sidebar navigation
 	aside.sidebar-nav.col-sm-3(ng-include="'/partials/edit/sidebar-nav'")
-		
+	//- Container to hold and drop all editable HTML pieces
 	.col-sm-9.edit-holder
 		.row
 			#drop-zone.text-center.col-sm-8.col-sm-offset-2(sortable)
-				h1.drop-placeholder Drop Here
+				i.drop-placeholder.fa.fa-arrow-down.fa-3x
 
-
+//- Modal for entering your email information
 .modal.fade#email-modal
 	.modal-dialog
 		form
@@ -28,6 +28,7 @@
 					button.btn.send-btn-alt(ng-click="sendEmail()", data-dismiss="modal") Send
 					button.btn.btn-default(data-dismiss="modal") Cancel
 
+//- Modal for changing image URL
 .modal.fade#imgModal
 	.modal-dialog
 		form#img-form

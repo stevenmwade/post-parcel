@@ -1,6 +1,9 @@
+// Sets medium editor
 var setEditables = function(){
 	setTimeout(function(){
+		// Selects anything with .editable
 		var elements = document.querySelectorAll('.editable'),
+			// Initialize editor for .editable
 			editor = new MediumEditor(elements, {
 				buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'header1', 'header2']
 			});
@@ -14,7 +17,7 @@ var setEditables = function(){
 
 
 $(document).ready(function() {
-	
+	// All the hovers for adding drag and remove buttons
 	$(document).on('mouseenter', '#hero-body', function(event) {
 		$('#hero-body > .section-btns').show();
 	});

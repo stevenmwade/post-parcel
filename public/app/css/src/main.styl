@@ -1,12 +1,15 @@
+// Set the only color for the page
 main-color = #21865A
 
 html
   width 100%
-  overflow-x hidden
 
 body
   font-family 'Lato', 'HelveticaNeue-Light', sans-serif
-  
+
+///////////////////
+// Navbar styles //
+///////////////////
 .navbar-container
   max-width 1000px
 
@@ -49,7 +52,11 @@ body
   
 .logo-sm
   max-height 45px
-    
+
+////////////////////////
+// Main page nav/hero //
+////////////////////////
+ 
 .main-head
   position relative
   top -50px
@@ -89,6 +96,11 @@ body
   & button
     font-weight 500
 
+
+///////////////////////////////
+// Sidebar Navigation Styles //
+///////////////////////////////
+
 .sidebar-nav
   height calc(100vh - 51px)
   width 22%
@@ -113,6 +125,12 @@ body
 
 .sidebar-footer
   padding 30px 10px 10px 25px
+
+
+
+///////////////////////////////
+// Main Page Template Styles //
+///////////////////////////////
 
 .section-selector
   text-align center
@@ -156,17 +174,10 @@ body
 .thumbnail-cta
   text-align center
 
-.panel-default
-  & > .panel-heading
-    background-color #EFEFEF
-    border none
-    box-shadow none
 
-.panel-group
-  background-color #EFEFEF
-  .panel
-    & + .panel
-      margin-top 0
+//////////////////////
+// Edit Page Styles //
+//////////////////////
 
 .edit-container
   background-color #EEE
@@ -181,7 +192,11 @@ body
   position relative
   margin-top 5%
   margin-bottom 5%
-  
+
+//////////////////////////////////////
+// Styles for the template sections //
+//////////////////////////////////////
+
 .template-items
   &:not(:last-child)
     margin 20px 0
@@ -198,24 +213,18 @@ body
   height calc(100vh - 51px)
   overflow scroll
 
+// For jQueryUI droppable attribute
 .drop-hover
   border solid 1px #9C9C9C
 
-.pieces
-  z-index 150
-  margin-top 10px
-  text-align center
-
 .template-holder
   height 900px
-  
-.navbar-form
-  .form-group
-    margin-left 10px
-  button
-    margin-left 10px
-  a
-    margin-left 10px
+
+
+/////////////////////////////////
+// Styles for sortable handle  //
+// and remove buttons          //
+/////////////////////////////////
 
 .section-btns
   display none
@@ -241,6 +250,11 @@ body
 
 .hero
   position relative
+
+
+//////////////////////////
+// Custom Button Styles //
+//////////////////////////
 
 .send-btn
   width 175px
@@ -268,7 +282,12 @@ body
     color main-color
     font-weight 500
     border solid 1px main-color
-  
+
+
+///////////////////
+// Footer Styles //
+///////////////////
+
 .footer-container
   margin-top 80px
   with 100%

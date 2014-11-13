@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+// Set template data schematic
 var templateSchema = {
 		name: String,
 		url: String,
@@ -11,9 +12,11 @@ var templateSchema = {
 				thumbnail: String
 			}]
 };
+// Create the model and if the collection is empty, seed it
 var Template = mongoose.model('Template', templateSchema);
 Template.find({}).exec(function(err, collection){
 	if(collection.length === 0) {
+		// Seed data
 		Template.create({
 				name: 'Hero',
 				url: '/templates/hero',

@@ -1,6 +1,8 @@
 myApp.controller('EditCtrl', function($scope, $routeParams, $http, Templates) {
-    // Grabbing template data
+    // Grabbing template name
     $scope.params = $routeParams;
+    // Grabs the templates from the promise then 
+    // filters it to the correct template data
     Templates.then(function(data){
     	$scope.template = data;
 	    $scope.template = $scope.template.filter(function(obj) {
@@ -16,13 +18,16 @@ myApp.controller('EditCtrl', function($scope, $routeParams, $http, Templates) {
     // Setting HTML for email and sending e-mail
     $scope.sendBtn = 'Send Newsletter'
     $scope.sendEmail = function(){
+        // Grabs HTML from the #drop-zone
     	$scope.html = $('#drop-zone').html();
+        // Splits the emails in the text area into an array
         $scope.emailTo = $scope.emailRecipients.split(', ');
     	console.log('HTML for email: ', $scope.html);
 
+        // Changes text of the button when sent
         $scope.sendBtn = "Email sent!";
-        $('.send-btn').removeClass('btn-default').addClass('btn-send')
     	 
+        // Sends data to apiController for sending through SendGrid
         setTimeout(function(){
     	    $http.post('/api/sendEmail', {
                 html: $scope.html,
@@ -37,6 +42,6 @@ myApp.controller('EditCtrl', function($scope, $routeParams, $http, Templates) {
                     console.log('Post error: ', data);
     	    		console.error('Error: ', status);
     	    	});   
-        }, 200);
+        }, 100);
     };
 });
