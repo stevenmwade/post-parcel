@@ -33,7 +33,7 @@ gulp.task('jade', function(){
 })
 
 gulp.task('watch', function(){
-	livereload.listen();
+	livereload.listen(35728);
 	gulp.watch(paths.js, ['js']);
 	gulp.watch(paths.css, ['css']);
 	gulp.watch(paths.jade, ['jade']);
